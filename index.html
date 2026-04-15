@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALVIAN LUTFI ANDIKA — Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#60a5fa',
+            dark: {
+              900: '#0d0d0d',
+              800: '#141414',
+              700: '#1c1c1c',
+              600: '#242424',
+              500: '#2e2e2e',
+            }
+          },
+          fontFamily: {
+            mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+    body { background-color: #0d0d0d; }
+    ::selection { background: #60a5fa33; color: #60a5fa; }
+
+    .nav-link {
+      position: relative;
+      color: #9ca3af;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background: #60a5fa;
+      transition: width 0.2s;
+    }
+    .nav-link:hover { color: #f9fafb; }
+    .nav-link:hover::after { width: 100%; }
+
+    .skill-tag {
+      border: 1px solid #2e2e2e;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .skill-tag:hover {
+      border-color: #60a5fa55;
+      background: #60a5fa0d;
+      color: #93c5fd;
+    }
+
+    .project-card {
+      border: 1px solid #242424;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover {
+      border-color: #60a5fa44;
+      transform: translateY(-3px);
+    }
+
+    .contact-link {
+      color: #9ca3af;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: #60a5fa; }
+
+    .cta-btn {
+      border: 1px solid #60a5fa55;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+    .cta-btn:hover {
+      background: #60a5fa18;
+      border-color: #60a5fa;
+      color: #93c5fd;
+    }
+
+    .section-line {
+      width: 32px; height: 2px;
+      background: #60a5fa;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+
+    .dot-grid {
+      background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-200 antialiased">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 border-b border-dark-600" style="background: rgba(13,13,13,0.92); backdrop-filter: blur(12px);">
+    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <span class="font-mono text-sm text-accent tracking-wide">pian.dev</span>
+      <div class="flex items-center gap-7">
+        <a href="#about" class="nav-link text-sm font-mono">about</a>
+        <a href="#projects" class="nav-link text-sm font-mono">projects</a>
+        <a href="#contact" class="nav-link text-sm font-mono">contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="dot-grid min-h-screen flex items-center pt-14">
+  <div class="max-w-5xl mx-auto px-6 py-24 w-full text-center">
+
+    <!-- FOTO PROFILE -->
+    <div class="mb-8 flex justify-center">
+      <img src="assets/images/profile.jpg" 
+           class="w-36 h-36 object-cover rounded-full border border-dark-600 shadow-lg">
+    </div>
+
+    <p class="font-mono text-accent text-sm mb-4 tracking-widest">Hello, world — I'm</p>
+    
+    <h1 class="text-5xl sm:text-7xl font-semibold text-white tracking-tight mb-4 leading-tight">
+      ALVIAN LUTFI ANDIKA
+    </h1>
+
+    <p class="text-xl sm:text-2xl text-gray-400 font-light mb-6">
+      Informatics Student & Aspiring Developer
+    </p>
+
+    <p class="text-gray-500 max-w-xl mx-auto leading-relaxed mb-10 text-base">
+      I'm a passionate informatics student who loves building things for the web.
+      I enjoy turning ideas into clean, functional code — from simple scripts to
+      full web interfaces.
+    </p>
+
+    <a href="#projects" class="cta-btn inline-flex items-center gap-2 font-mono text-sm text-accent px-5 py-2.5 rounded-md">
+      <span>View my work</span>
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 8h10M9 4l4 4-4 4"/>
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+  <!-- About -->
+  <section id="about" class="py-24 border-t border-dark-600">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
+        <span class="section-line"></span>About
+      </h2>
+      <div class="grid md:grid-cols-2 gap-14">
+        <div>
+          <p class="text-gray-400 leading-relaxed mb-5">
+            Saat ini saya sedang mempelajari Informatika dan menjelajahi dunia pengembangan perangkat lunak.
+            Saya senang mempelajari teknologi baru dan membangun proyek yang memecahkan masalah nyata, sekecil apa pun itu.
+          </p>
+          <p class="text-gray-500 leading-relaxed">
+            Ketika tidak sedang coding, saya membaca tentang teknologi, bereksperimen dengan desain, atau berkontribusi pada proyek kolaboratif.
+            Saya percaya perangkat lunak yang hebat dibangun di atas logika yang bersih dan struktur yang matang.
+          </p>
+        </div>
+        <div>
+          <p class="text-xs font-mono text-gray-600 uppercase tracking-widest mb-5">Tech Stack</p>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag font-mono text-sm text-gray-400 px-4 py-2 rounded-md bg-dark-700">Python</span>
+            <span class="skill-tag font-mono text-sm text-gray-400 px-4 py-2 rounded-md bg-dark-700">HTML</span>
+            <span class="skill-tag font-mono text-sm text-gray-400 px-4 py-2 rounded-md bg-dark-700">CSS</span>
+            <span class="skill-tag font-mono text-sm text-gray-400 px-4 py-2 rounded-md bg-dark-700">JavaScript</span>
+          </div>
+          <div class="mt-8 p-4 rounded-md bg-dark-700 border border-dark-500 font-mono text-sm">
+            <p class="text-gray-600 mb-1"># status</p>
+            <p class="text-green-400">● <span class="text-gray-400">open to internships &amp; collabs</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 border-t border-dark-600">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
+        <span class="section-line"></span>Projects
+      </h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+        <!-- Project 1 -->
+        <div class="project-card rounded-lg bg-dark-700 p-6 flex flex-col">
+  <div class="flex items-start justify-between mb-4">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5">
+      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+    </svg>
+
+    <span class="font-mono text-xs text-green-400 border border-green-400 px-2 py-0.5 rounded">
+      ● LIVE
+    </span>
+  </div>
+
+  <h3 class="font-semibold text-white text-base mb-2">Snake Game V1</h3>
+
+  <p class="text-gray-500 text-sm leading-relaxed flex-1">
+    Interactive Snake game built using HTML Canvas and JavaScript.
+    Features score system, level system, and smooth neon-style visuals.
+  </p>
+
+  <div class="mt-5 pt-4 border-t border-dark-500 flex gap-4">
+    
+    <!-- PLAY -->
+    <a href="https://alvianlutfi496.github.io/SnakeV1/" target="_blank"
+       class="font-mono text-xs text-accent hover:text-white transition">
+      ▶ Play Game ↗
+    </a>
+
+    <!-- GITHUB -->
+    <a href="https://github.com/alvianlutfi496/SnakeV1" target="_blank"
+       class="font-mono text-xs text-gray-500 hover:text-accent transition">
+      GitHub
+    </a>
+
+  </div>
+</div>
+
+        <!-- Project 2 -->
+        <div class="project-card rounded-lg bg-dark-700 p-6 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+            <span class="font-mono text-xs text-gray-600 border border-dark-500 px-2 py-0.5 rounded">HTML / CSS</span>
+          </div>
+          <h3 class="font-semibold text-white text-base mb-2">Personal Blog</h3>
+          <p class="text-gray-500 text-sm leading-relaxed flex-1">
+            Situs blog statis yang dibangun dari awal menggunakan HTML dan CSS. 
+            Tata letak bersih yang berfokus pada keterbacaan, dengan tema gelap minimalis dan desain responsif.
+          </p>
+          <div class="mt-5 pt-4 border-t border-dark-500 flex gap-4">
+            <a href="#" class="font-mono text-xs text-gray-500 hover:text-accent transition-colors flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="font-mono text-xs text-gray-500 hover:text-accent transition-colors flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+              Live
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card rounded-lg bg-dark-700 p-6 flex flex-col">
+          <div class="flex items-start justify-between mb-4">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5" stroke-linecap="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+            <span class="font-mono text-xs text-gray-600 border border-dark-500 px-2 py-0.5 rounded">JavaScript</span>
+          </div>
+          <h3 class="font-semibold text-white text-base mb-2">Quiz App</h3>
+          <p class="text-gray-500 text-sm leading-relaxed flex-1">
+            Aplikasi kuis interaktif yang dibangun dengan JavaScript murni. 
+            Dilengkapi dengan timer, pelacakan skor, dan pertanyaan pilihan ganda yang dimuat dari file JSON.
+          </p>
+          <div class="mt-5 pt-4 border-t border-dark-500 flex gap-4">
+            <a href="#" class="font-mono text-xs text-gray-500 hover:text-accent transition-colors flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="font-mono text-xs text-gray-500 hover:text-accent transition-colors flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 8h12M8 2l6 6-6 6"/></svg>
+              Live
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-24 border-t border-dark-600">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold text-white mb-12 flex items-center">
+        <span class="section-line"></span>Contact
+      </h2>
+      <div class="grid md:grid-cols-2 gap-12">
+
+        <div>
+          <p class="text-gray-500 leading-relaxed mb-8">
+            Saya selalu terbuka untuk peluang baru, kolaborasi, atau sekadar percakapan ramah tentang teknologi. 
+            Silakan hubungi saya melalui salah satu saluran di bawah ini.
+          </p>
+          <div class="space-y-4">
+            <a href="mailto:pian@email.com" class="contact-link flex items-center gap-3 text-sm font-mono group">
+              <span class="w-8 h-8 rounded border border-dark-500 flex items-center justify-center group-hover:border-accent transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              alvianlutfi46@gmail.com
+            </a>
+            <a href="tel:+628123456789" class="contact-link flex items-center gap-3 text-sm font-mono group">
+              <span class="w-8 h-8 rounded border border-dark-500 flex items-center justify-center group-hover:border-accent transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5 19.79 19.79 0 01.12 2.82 2 2 0 012.11 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </span>
+              +62 812-8260-2566
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-xs font-mono text-gray-600 uppercase tracking-widest mb-5">Socials</p>
+          <div class="grid grid-cols-2 gap-3">
+
+            <!-- LinkedIn -->
+<a href="#" 
+   class="contact-link flex items-center gap-3 text-sm font-mono border border-dark-500 rounded-md px-4 py-3 hover:border-accent transition-colors group opacity-60 cursor-not-allowed">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+    <circle cx="4" cy="4" r="2"/>
+  </svg>
+  LinkedIn (soon)
+</a>
+  <!-- Instagram -->
+  <a href="https://instagram.com/pppiiaan" target="_blank" rel="noopener noreferrer"
+     class="contact-link flex items-center gap-3 text-sm font-mono border border-dark-500 rounded-md px-4 py-3 hover:border-accent transition-colors group">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <rect x="2" y="2" width="20" height="20" rx="5"/>
+      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+    Instagram
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://tiktok.com/@ppiiaann127" target="_blank" rel="noopener noreferrer"
+     class="contact-link flex items-center gap-3 text-sm font-mono border border-dark-500 rounded-md px-4 py-3 hover:border-accent transition-colors group">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.97a8.13 8.13 0 004.78 1.54V7.08a4.86 4.86 0 01-1.01-.39z"/>
+    </svg>
+    TikTok
+  </a>
+
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/pppiiann127/" target="_blank" rel="noopener noreferrer"
+     class="contact-link flex items-center gap-3 text-sm font-mono border border-dark-500 rounded-md px-4 py-3 hover:border-accent transition-colors group">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    </svg>
+    Facebook
+  </a>
+
+</div>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-600 py-6">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <span class="font-mono text-xs text-gray-600">pian.dev</span>
+      <span class="font-mono text-xs text-gray-700">built with HTML &amp; Tailwind CSS</span>
+    </div>
+  </footer>
+
+</body>
+</html>
